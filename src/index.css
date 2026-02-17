@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ─── macOS Tahoe native design tokens ─── */
+:root {
+  --mac-sidebar: rgba(246, 246, 246, 0.82);
+  --mac-sidebar-border: rgba(0, 0, 0, 0.08);
+  --mac-content-bg: #ffffff;
+  --mac-surface: rgba(0, 0, 0, 0.03);
+  --mac-surface-hover: rgba(0, 0, 0, 0.05);
+  --mac-surface-active: rgba(0, 0, 0, 0.08);
+  --mac-group-bg: #ffffff;
+  --mac-group-border: rgba(0, 0, 0, 0.06);
+  --mac-text-primary: #1d1d1f;
+  --mac-text-secondary: #86868b;
+  --mac-text-tertiary: #aeaeb2;
+  --mac-accent: #007aff;
+  --mac-accent-hover: #0060cc;
+  --mac-green: #34c759;
+  --mac-yellow: #ff9f0a;
+  --mac-red: #ff3b30;
+  --mac-orange: #ff9500;
+  --mac-separator: rgba(0, 0, 0, 0.08);
+  --mac-nav-active: rgba(0, 122, 255, 0.12);
+  --mac-nav-active-text: #007aff;
+  --mac-badge-gray-bg: rgba(0, 0, 0, 0.05);
+  --mac-badge-gray-text: #86868b;
+  --mac-input-bg: #ffffff;
+  --mac-input-border: rgba(0, 0, 0, 0.12);
+  --mac-input-focus: rgba(0, 122, 255, 0.4);
+  --mac-titlebar-height: 52px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--mac-text-primary);
+  background: var(--mac-content-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mac-sidebar: rgba(30, 30, 30, 0.82);
+    --mac-sidebar-border: rgba(255, 255, 255, 0.08);
+    --mac-content-bg: #1c1c1e;
+    --mac-surface: rgba(255, 255, 255, 0.05);
+    --mac-surface-hover: rgba(255, 255, 255, 0.08);
+    --mac-surface-active: rgba(255, 255, 255, 0.12);
+    --mac-group-bg: #2c2c2e;
+    --mac-group-border: rgba(255, 255, 255, 0.08);
+    --mac-text-primary: #f5f5f7;
+    --mac-text-secondary: #98989f;
+    --mac-text-tertiary: #636366;
+    --mac-separator: rgba(255, 255, 255, 0.08);
+    --mac-nav-active: rgba(0, 122, 255, 0.22);
+    --mac-badge-gray-bg: rgba(255, 255, 255, 0.08);
+    --mac-badge-gray-text: #98989f;
+    --mac-input-bg: rgba(255, 255, 255, 0.06);
+    --mac-input-border: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ─── Draggable window titlebar for Tauri ─── */
+[data-tauri-drag-region] {
+  -webkit-app-region: drag;
+}
+
+button, a, input, select, textarea {
+  -webkit-app-region: no-drag;
+}
+
+/* ─── macOS Tahoe base styles ─── */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Custom scrollbar (macOS-style thin) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
